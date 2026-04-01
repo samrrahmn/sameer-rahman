@@ -1,60 +1,35 @@
 # Sameer Rahman's Personal Website
 
-This is the source code for my personal website, built with Astro.
-
-## About
-
-I'm Sameer Rahman, a tech entrepreneur and developer focused on building AI-powered SaaS products and automation systems.  
-This website is where I share my work, thoughts, and learnings while building products in public.
+This is the source code for my personal website, built with [Astro](https://astro.build) and deployed on [Vercel](https://vercel.com).
 
 ## Project Structure
 
-├── public/ # Static assets (images, favicon)
-│ └── sameer-rahman.png
+├── public/               # Static assets (images, favicon)
+│   └── sameer-rahman.png
 ├── src/
-│ ├── content/ # Blog content (Markdown)
-│ │ └── posts/ # All posts
-│ ├── layouts/ # Shared layout (header, footer)
-│ ├── pages/ # Pages (home, post, about, 404)
-│ │ └── post/ # Dynamic post pages
-│ └── styles/ # Global styles (if added later)
-├── astro.config.mjs # Astro configuration
-├── package.json # Dependencies and scripts
+│   ├── content/          # Content collections
+│   │   └── posts/        # Blog posts in Markdown format
+│   ├── layouts/          # Page layouts (header, footer)
+│   ├── pages/            # Routes and pages
+│   │   └── post/         # Dynamic post pages
+│   └── styles/           # Global styles (if added later)
+├── astro.config.mjs     # Astro configuration
+├── package.json         # Project dependencies and scripts
 
 ## Commands
 
-Command Action  
-npm install Installs dependencies  
-npm run dev Starts local dev server (localhost:4321)  
-npm run build Builds production site  
-npm run preview Preview production build
-
-## Content
-
-All blog posts are written in Markdown and stored inside:
-
-src/content/posts
-
-Each post automatically becomes a page.
-
-## Features
-
-- Minimal personal website
-- Blog system with Markdown
-- Fast performance (Astro)
-- Dark / Light mode toggle
-- Clean and simple design
+| Command                | Action                                      |
+| :--------------------- | :------------------------------------------ |
+| `npm install`          | Installs dependencies                       |
+| `npm run dev`          | Starts local dev server at `localhost:4321` |
+| `npm run build`        | Build the production site to `./dist/`      |
+| `npm run preview`      | Preview the build locally                   |
 
 ## Deployment
 
-This site can be easily deployed using platforms like Vercel or Netlify.  
-Just connect your repository and deploy.
+This site is set up for easy deployment on Vercel. Just connect your GitHub repository to Vercel, and it will automatically build and deploy the site when changes are pushed.
 
 ## License
 
 This project is open for learning and personal use.  
 Feel free to explore and adapt.
-
----
-
-© Sameer Rahman
