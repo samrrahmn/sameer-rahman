@@ -14,8 +14,8 @@ This is the source code for my personal website, built with [Astro](https://astr
 │   ├── pages/            # Routes and pages
 │   │   └── post/         # Dynamic post pages
 │   └── styles/           # Global styles (if added later)
-├── astro.config.mjs     # Astro configuration
-├── package.json         # Project dependencies and scripts
+├── astro.config.mjs      # Astro configuration
+├── package.json          # Project dependencies and scripts
 ```
 
 ## Commands
