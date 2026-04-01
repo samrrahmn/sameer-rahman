@@ -1,11 +1,138 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const posts = await getCollection('posts');
 ---
 
 <Layout>
-	<Welcome />
+
+  <section class="hero">
+    <img src="/sameer-rahman.png" alt="profile" />
+
+    <div>
+      <h1>Sameer Rahman</h1>
+      <p>
+        AI-powered SaaS products from idea to launch. Everything I build ships, improves over time, and evolves in public.
+      </p>
+
+      <div class="socials">
+        <a href="https://twitter.com/samrrahmn" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://github.com/samrrahmn" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/samrrahmn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://facebook.com/samrrahmn" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="posts">
+    {posts.map((post) => (
+      <div class="post">
+        <a href={`/post/${post.id}`}>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.date}</p>
+          <p>
+            {post.body
+              ?.replace(/[#>*_\-]/g, '')
+              .slice(0, 120)}...
+          </p>
+        </a>
+      </div>
+    ))}
+
+    <a href="/post" class="all-posts">
+      All Posts →
+    </a>
+  </section>
+
+  <style>
+    .hero {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      margin-top: 6px;
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    body.light .hero p {
+      color: #555;
+    }
+
+    .socials {
+      margin-top: 10px;
+    }
+
+    .socials a {
+      margin-right: 14px;
+      color: inherit;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+
+    .socials a:hover {
+      opacity: 1;
+    }
+
+    .posts {
+      margin-top: 50px;
+    }
+
+    .post {
+      margin-bottom: 26px;
+    }
+
+    .post a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .post h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .post p {
+      margin: 6px 0;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    body.light .post p {
+      color: #666;
+    }
+
+    .all-posts {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: inherit;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    .all-posts:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  </style>
+
 </Layout>

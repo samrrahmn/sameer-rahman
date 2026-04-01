@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+---
+
+<Layout title="Posts">
+
+  <section class="posts">
+    <h1>Posts</h1>
+
+    {posts.map((post) => (
+      <div class="post">
+        <a href={`/post/${post.id}`}>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.date}</p>
+          <p>
+            {post.body
+              ?.replace(/[#>*_\-]/g, '')
+              .slice(0, 120)}...
+          </p>
+        </a>
+      </div>
+    ))}
+  </section>
+
+  <style>
+    h1 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .posts {
+      margin-top: 10px;
+    }
+
+    .post {
+      margin-bottom: 26px;
+    }
+
+    .post a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .post a:visited {
+      color: inherit;
+    }
+
+    .post h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .post p {
+      margin: 6px 0;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    body.light .post p {
+      color: #666;
+    }
+  </style>
+
+</Layout>
