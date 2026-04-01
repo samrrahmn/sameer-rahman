@@ -4,6 +4,7 @@ This is the source code for my personal website, built with [Astro](https://astr
 
 ## Project Structure
 
+```text
 ├── public/               # Static assets (images, favicon)
 │   └── sameer-rahman.png
 ├── src/
@@ -15,6 +16,7 @@ This is the source code for my personal website, built with [Astro](https://astr
 │   └── styles/           # Global styles (if added later)
 ├── astro.config.mjs     # Astro configuration
 ├── package.json         # Project dependencies and scripts
+```
 
 ## Commands
 
