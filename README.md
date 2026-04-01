@@ -1,46 +1,60 @@
-# Astro Starter Kit: Basics
+# Sameer Rahman's Personal Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is the source code for my personal website, built with Astro.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## About
 
-## 🚀 Project Structure
+I'm Sameer Rahman, a tech entrepreneur and developer focused on building AI-powered SaaS products and automation systems.  
+This website is where I share my work, thoughts, and learnings while building products in public.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+├── public/ # Static assets (images, favicon)
+│ └── sameer-rahman.png
+├── src/
+│ ├── content/ # Blog content (Markdown)
+│ │ └── posts/ # All posts
+│ ├── layouts/ # Shared layout (header, footer)
+│ ├── pages/ # Pages (home, post, about, 404)
+│ │ └── post/ # Dynamic post pages
+│ └── styles/ # Global styles (if added later)
+├── astro.config.mjs # Astro configuration
+├── package.json # Dependencies and scripts
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Commands
 
-## 🧞 Commands
+Command Action  
+npm install Installs dependencies  
+npm run dev Starts local dev server (localhost:4321)  
+npm run build Builds production site  
+npm run preview Preview production build
 
-All commands are run from the root of the project, from a terminal:
+## Content
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+All blog posts are written in Markdown and stored inside:
 
-## 👀 Want to learn more?
+src/content/posts
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Each post automatically becomes a page.
+
+## Features
+
+- Minimal personal website
+- Blog system with Markdown
+- Fast performance (Astro)
+- Dark / Light mode toggle
+- Clean and simple design
+
+## Deployment
+
+This site can be easily deployed using platforms like Vercel or Netlify.  
+Just connect your repository and deploy.
+
+## License
+
+This project is open for learning and personal use.  
+Feel free to explore and adapt.
+
+---
+
+© Sameer Rahman
