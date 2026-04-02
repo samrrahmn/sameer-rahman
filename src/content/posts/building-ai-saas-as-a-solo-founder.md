@@ -1,6 +1,6 @@
 ---
 title: Building AI SaaS as a Solo Founder
-date: April 2026
+date: "2026-04-01"
 description: How I approach building AI SaaS products as a solo founder.
 ---
 
