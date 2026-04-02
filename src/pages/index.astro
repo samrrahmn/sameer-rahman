@@ -8,7 +8,7 @@ const posts = (await getCollection('posts'))
     const dateB = new Date(b.data.date).getTime();
     return dateB - dateA;
   })
-  .slice(0, 10);
+  .slice(0, 5);
 ---
 
 <Layout>
