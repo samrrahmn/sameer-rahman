@@ -41,13 +41,17 @@ const { Content } = await render(post);
 
     .back {
       font-size: 13px;
-      color: #aaa;
+      color: white;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-bottom: 24px;
       text-decoration: none !important;
       opacity: 0.8;
+    }
+
+    body.light .back {
+      color: black;
     }
 
     .back:hover {
