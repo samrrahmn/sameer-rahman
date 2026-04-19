@@ -8,13 +8,13 @@ const posts = (await getCollection('posts'))
     const dateB = new Date(b.data.date).getTime();
     return dateB - dateA;
   })
-  .slice(0, 5);
+  .slice(0, 3);
 ---
 
 <Layout>
 
   <section class="hero">
-    <img src="/sameer-rahman.png" alt="profile" />
+    <img src="/sameer-rahman.jpg" alt="profile" />
 
     <div>
       <h1>Sameer Rahman</h1>
@@ -31,7 +31,56 @@ const posts = (await getCollection('posts'))
     </div>
   </section>
 
+<section class="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>
+      <a href="https://github.com/samrrahmn/polar-desk" target="_blank">
+        Polar Desk
+      </a>
+    </h3>
+
+    <p>
+      A client portal built for service teams to manage projects, streamline communication, and keep everything organized in one workspace.
+    </p>
+
+    <div class="stack">
+      <span>Next.js</span>
+      <span>React</span>
+      <span>Supabase</span>
+      <span>Tailwind</span>
+      <span>Stripe</span>
+      <span>Vercel</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>
+      <a href="https://github.com/samrrahmn/appbase" target="_blank">
+        Appbase
+      </a>
+    </h3>
+
+    <p>
+      An AI-powered platform to discover, evaluate, and compare software with structured insights and intelligent recommendations.
+    </p>
+
+    <div class="stack">
+      <span>Next.js</span>
+      <span>React</span>
+      <span>Supabase</span>
+      <span>Tailwind</span>
+      <span>AI APIs</span>
+      <span>Vercel</span>
+    </div>
+  </div>
+</section>
+  
+
   <section class="posts">
+    <h2>Recent Posts</h2>
+
     {posts.map((post) => (
       <div class="post">
         <a href={`/post/${post.id}`}>
@@ -97,8 +146,76 @@ const posts = (await getCollection('posts'))
       opacity: 1;
     }
 
+    .projects {
+  margin-top: 60px;
+}
+
+.projects h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project {
+  margin-bottom: 28px;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.project p {
+  margin: 6px 0 10px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* Stack (boxed) */
+.stack span {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 8px;
+  margin-right: 6px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: #aaa;
+}
+
+.project h3 a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.project h3 a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* Light mode */
+body.light .project p {
+  color: #555;
+}
+
+body.light .stack span {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  color: #555;
+}
+
     .posts {
       margin-top: 50px;
+    }
+
+    .posts h2 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
     }
 
     .post {
