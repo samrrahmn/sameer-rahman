@@ -19,8 +19,6 @@ const { title = "Sameer Rahman" } = Astro.props;
       body {
         margin: 0;
         font-family: 'Inter', system-ui;
-        background: black;
-        color: white;
         transition: all 0.2s ease;
         display: flex;
         flex-direction: column;
@@ -31,6 +29,11 @@ const { title = "Sameer Rahman" } = Astro.props;
       body.light {
         background: white;
         color: black;
+      }
+
+      body.dark {
+        background: black;
+        color: white;
       }
 
       * {
@@ -67,11 +70,11 @@ const { title = "Sameer Rahman" } = Astro.props;
         gap: 10px;
         padding: 10px 0 16px;
         margin-bottom: 24px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
       }
 
-      body.light header {
-        border-bottom: 1px solid rgba(0,0,0,0.08);
+      body.dark header {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
       }
 
       header a.logo {
@@ -111,13 +114,13 @@ const { title = "Sameer Rahman" } = Astro.props;
         margin-top: 40px;
         padding: 16px;
         font-size: 13px;
-        color: #aaa;
-        border-top: 1px solid rgba(255,255,255,0.08);
-      }
-
-      body.light footer {
         color: #666;
         border-top: 1px solid rgba(0,0,0,0.08);
+      }
+
+      body.dark footer {
+        color: #aaa;
+        border-top: 1px solid rgba(255,255,255,0.08);
       }
 
       .socials {
@@ -182,7 +185,9 @@ const { title = "Sameer Rahman" } = Astro.props;
       function applyTheme(theme: string) {
         if (theme === 'light') {
           document.body.classList.add('light');
+          document.body.classList.remove('dark');
         } else {
+          document.body.classList.add('dark');
           document.body.classList.remove('light');
         }
       }
@@ -196,7 +201,7 @@ const { title = "Sameer Rahman" } = Astro.props;
         });
       }
 
-      const savedTheme = localStorage.getItem('theme') || 'dark';
+      const savedTheme = localStorage.getItem('theme') || 'light';
       applyTheme(savedTheme);
     </script>
 
