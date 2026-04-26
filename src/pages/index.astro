@@ -74,6 +74,62 @@ const posts = (await getCollection('posts'))
     </div>
   </div>
 </section>
+
+<section class="stack-section">
+  <h2>Tech Stack</h2>
+
+  <div class="stack-grid">
+
+    <div class="stack-card">
+      <h3>Frontend</h3>
+      <div class="stack-items">
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>Tailwind</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <h3>Backend</h3>
+      <div class="stack-items">
+        <span>Node.js</span>
+        <span>Python</span>
+        <span>Express.js</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <h3>Databases</h3>
+      <div class="stack-items">
+        <span>PostgreSQL</span>
+        <span>MongoDB</span>
+        <span>Redis</span>
+      </div>
+    </div>
+
+    <div class="stack-card">
+      <h3>Tools</h3>
+      <div class="stack-items">
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>VS Code</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="github">
+  <h2>GitHub Activity</h2>
+
+  <div class="github-graph">
+    <img 
+      src="https://ghchart.rshah.org/samrrahmn" 
+      alt="GitHub contribution graph"
+    />
+  </div>
+</section>
   
 
   <section class="posts">
@@ -94,7 +150,8 @@ const posts = (await getCollection('posts'))
     ))}
 
     <a href="/post" class="all-posts">
-      All Posts →
+      All Posts <i class="fa-solid fa-arrow-right"></i>
+
     </a>
   </section>
 
@@ -198,6 +255,101 @@ const posts = (await getCollection('posts'))
 /* Light mode */
 body.light .project p {
   color: #555;
+}
+
+.stack-section {
+  margin-top: 60px;
+}
+
+.stack-section h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* GRID instead of vertical stack */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Card style */
+.stack-card {
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.147);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.2s ease;
+}
+
+
+/* Title */
+.stack-card h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* Chips */
+.stack-items span {
+  display: inline-block;
+  font-size: 11px;
+  padding: 5px 9px;
+  margin-right: 6px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: #aaa;
+}
+
+/* Light mode */
+body.light .stack-card {
+  background: #fafafa61;
+  border: 1px solid #e5e5e5;
+}
+
+
+body.light .stack-card h3 {
+  color: #666;
+}
+
+body.light .stack-items span {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  color: #555;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.github {
+  margin-top: 60px;
+}
+
+.github h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.github-graph {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.github-graph img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 body.light .stack span {
